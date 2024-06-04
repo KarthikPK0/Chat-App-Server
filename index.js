@@ -7,8 +7,7 @@ const helmet = require('helmet');
 const app = express();
 const server = http.createServer(app);
 
-const allowedOrigin = 'https://litechat-chatapp.netlify.app'; // Removed trailing slash
-
+const allowedOrigin = 'https://litechat-chatapp.netlify.app'; 
 const io = socketIo(server, {
   cors: {
     origin: allowedOrigin,
@@ -23,11 +22,11 @@ const corsOptions = {
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
   credentials: true,
-  optionsSuccessStatus: 204 // For legacy browser support
+  optionsSuccessStatus: 204 
 };
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Enable preflight handling for all routes
+app.options('*', cors(corsOptions)); 
 
 app.use(helmet({
   contentSecurityPolicy: {
