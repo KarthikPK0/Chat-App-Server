@@ -7,7 +7,7 @@ const helmet = require('helmet');
 const app = express();
 const server = http.createServer(app);
 
-const allowedOrigin = 'http://localhost:5173';
+const allowedOrigin = 'https://litechat-chatapp.netlify.app';
 
 const io = socketIo(server, {
   cors: {
